@@ -13,7 +13,7 @@ public class Sort {
         try {
             writer = new PrintWriter(new File(fileName));
             Scanner scanner = new Scanner(new File("EARL Candygram 2022 form (Responses) - Form Responses 1.tsv"));
-            int counter = 99;//id 100-1
+            int counter = 0;
 
             scanner.nextLine();//get rid of title
 
@@ -26,6 +26,7 @@ public class Sort {
                 String sender = (info[3].equals("Yes") ? "Anonymous " : info[1]);
                 String printingInfo = "Order ID: " + (counter*100) +
                         "\nHomeroom: " + info[8] +
+                        "\nGrade: " + info[7] +
                         "\nHey " + info[4] + ", \n You've received  a candygram from a fellow lion!\n " + info[9] + "\n -" + sender;
                 writeToFile(printingInfo);
             }
